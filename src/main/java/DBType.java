@@ -1,0 +1,4 @@
+public enum DBType {
+
+    MYSQLDB;
+}
