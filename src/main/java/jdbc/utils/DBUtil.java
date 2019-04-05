@@ -1,3 +1,5 @@
+package jdbc.utils;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -6,7 +8,7 @@ public class DBUtil {
 
     private static final String mySqlUser = "root";
     private static final String mySqlPwd = "marsubhai";
-    private static final String mySqlCS = "jdbc:mysql://localhost:3306?autoReconnect=true&useSSL=false";
+    private static final String mySqlCS = "jdbc:mysql://localhost:3306/zipcode_bots?autoReconnect=true&useSSL=false";
 
     public static Connection getConnection(DBType dbType) throws SQLException {
         Connection conn = null;
@@ -17,7 +19,7 @@ public class DBUtil {
             default:
                 return null;
         }
-
+        System.out.println("Successful connection");
         return conn;
     }
 

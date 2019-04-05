@@ -1,14 +1,24 @@
-package models;
+package jdbc.models;
 
-import daos.DTO;
+import jdbc.daos.DTO;
 
 public class Bot implements DTO {
 
-    private int botID;
+    private Integer botID;
     private String botName;
     private String botModel;
     private Integer botVersion;
     private String botCatchphrase;
+
+    public Bot(){}
+
+    public Bot(Integer botID, String botName, String botModel, Integer botVersion, String botCatchphrase) {
+        this.botID = botID;
+        this.botName = botName;
+        this.botModel = botModel;
+        this.botVersion = botVersion;
+        this.botCatchphrase = botCatchphrase;
+    }
 
     public void setBotID(Integer botID) {
         this.botID = botID;
@@ -46,7 +56,19 @@ public class Bot implements DTO {
         this.botCatchphrase = botCatchphrase;
     }
 
+    @Override
     public int getId() {
         return botID;
+    }
+
+    @Override
+    public String toString() {
+        return "Bot{" +
+                "botID=" + botID +
+                ", botName='" + botName + '\'' +
+                ", botModel='" + botModel + '\'' +
+                ", botVersion=" + botVersion +
+                ", botCatchphrase='" + botCatchphrase + '\'' +
+                '}';
     }
 }
